@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: cirrusci/flutter:stable
+      image: cirrusci/flutter:3.24.0
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
