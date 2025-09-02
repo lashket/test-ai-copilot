@@ -1,16 +1,27 @@
-# test_task_oncom
+# Test Task
 
-On com test task
+Flutter chat application with AI assistant.
 
-## Getting Started
+## Technologies
 
-This project is a starting point for a Flutter application.
+flutter_bloc, dio, equatable, uuid, intl, json_annotation, json_serializable, flutter_test, mocktail, bloc_test, build_runner, very_good_analysis
 
-A few resources to get you started if this is your first Flutter project:
+## Architecture
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Tried to follow clean architecture approach with domain, data and presentation layers.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Testing
+
+Used AI extensively for writing tests, then reviewed them manually. Created 62 tests covering main functionality.
+
+## Code Quality
+
+Set up pipeline for code formatting and analyzer checks.
+
+## Running the Project
+
+Set environment variables using dart define:
+
+```bash
+flutter run --dart-define=CONVAI_API_KEY=your_api_key_here --dart-define=CONVAI_BASE_URL=https://your-base-url.com
+```
