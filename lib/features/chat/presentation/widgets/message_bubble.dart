@@ -41,15 +41,15 @@ class SentMessageBubble extends MessageBubble {
 
   @override
   EdgeInsets getMargin() => const EdgeInsets.symmetric(
-        vertical: 6,
-        horizontal: 8,
-      );
+    vertical: 6,
+    horizontal: 8,
+  );
 
   @override
   EdgeInsets getPadding() => const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 12,
-      );
+    vertical: 10,
+    horizontal: 12,
+  );
 
   @override
   BoxDecoration getDecoration(BuildContext context) {
@@ -73,15 +73,15 @@ class ReceivedMessageBubble extends MessageBubble {
 
   @override
   EdgeInsets getMargin() => const EdgeInsets.symmetric(
-        vertical: 6,
-        horizontal: 8,
-      );
+    vertical: 6,
+    horizontal: 8,
+  );
 
   @override
   EdgeInsets getPadding() => const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 12,
-      );
+    vertical: 10,
+    horizontal: 12,
+  );
 
   @override
   BoxDecoration getDecoration(BuildContext context) {

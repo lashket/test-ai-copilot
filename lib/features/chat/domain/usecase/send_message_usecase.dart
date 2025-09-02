@@ -9,10 +9,9 @@ class SendMessageUseCase {
     required String userText,
     required String threadId,
     required String resourceId,
-  }) =>
-      _repo.ask(
-        userText: userText,
-        threadId: threadId,
-        resourceId: resourceId,
-      );
+  }) => _repo.ask(
+    userText: userText,
+    threadId: threadId,
+    resourceId: resourceId,
+  );
 }

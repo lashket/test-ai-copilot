@@ -16,17 +16,17 @@ class Message extends Equatable {
   final DateTime createdAt;
 
   Message copyWith({String? content}) => Message(
-        id: id,
-        role: role,
-        content: content ?? this.content,
-        createdAt: createdAt,
-      );
+    id: id,
+    role: role,
+    content: content ?? this.content,
+    createdAt: createdAt,
+  );
 
   @override
   List<Object?> get props => [
-        id,
-        role,
-        content,
-        createdAt,
-      ];
+    id,
+    role,
+    content,
+    createdAt,
+  ];
 }

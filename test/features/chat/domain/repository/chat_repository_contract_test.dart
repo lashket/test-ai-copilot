@@ -24,11 +24,13 @@ void main() {
         const resourceId = 'resource-456';
         const expectedReply = 'Hi there!';
 
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenAnswer((_) async => expectedReply);
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenAnswer((_) async => expectedReply);
 
         // Act
         final result = await repository.ask(
@@ -49,11 +51,13 @@ void main() {
         const resourceId = 'resource-456';
         const expectedReply = 'Please provide a message.';
 
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenAnswer((_) async => expectedReply);
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenAnswer((_) async => expectedReply);
 
         // Act & Assert
         final result = await repository.ask(
@@ -72,11 +76,13 @@ void main() {
         const resourceId = 'resource-456';
         const expectedReply = 'Received long message.';
 
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenAnswer((_) async => expectedReply);
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenAnswer((_) async => expectedReply);
 
         // Act & Assert
         final result = await repository.ask(
@@ -95,11 +101,13 @@ void main() {
         const resourceId = 'resource-456';
         final exception = Exception('Service unavailable');
 
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenThrow(exception);
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenThrow(exception);
 
         // Act & Assert
         expect(
@@ -113,19 +121,22 @@ void main() {
       });
 
       test('should require all parameters', () async {
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenAnswer((_) async => 'test reply');
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenAnswer((_) async => 'test reply');
 
         expect(
-            () async => repository.ask(
-                  userText: 'test',
-                  threadId: 'test',
-                  resourceId: 'test',
-                ),
-            returnsNormally);
+          () async => repository.ask(
+            userText: 'test',
+            threadId: 'test',
+            resourceId: 'test',
+          ),
+          returnsNormally,
+        );
       });
     });
 
@@ -137,11 +148,13 @@ void main() {
         const resourceId = 'resource-456';
         const expectedReply = 'Test reply';
 
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenAnswer((_) async => expectedReply);
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenAnswer((_) async => expectedReply);
 
         // Act
         await repository.ask(
@@ -151,11 +164,13 @@ void main() {
         );
 
         // Assert
-        verify(() => mockDataSource.fetchAssistantReply(
-              userText: userText,
-              threadId: threadId,
-              resourceId: resourceId,
-            )).called(1);
+        verify(
+          () => mockDataSource.fetchAssistantReply(
+            userText: userText,
+            threadId: threadId,
+            resourceId: resourceId,
+          ),
+        ).called(1);
       });
 
       test('should not modify parameters before delegation', () async {
@@ -165,11 +180,13 @@ void main() {
         const resourceId = 'resource-456';
         const expectedReply = 'Hi';
 
-        when(() => mockDataSource.fetchAssistantReply(
-              userText: any(named: 'userText'),
-              threadId: any(named: 'threadId'),
-              resourceId: any(named: 'resourceId'),
-            )).thenAnswer((_) async => expectedReply);
+        when(
+          () => mockDataSource.fetchAssistantReply(
+            userText: any(named: 'userText'),
+            threadId: any(named: 'threadId'),
+            resourceId: any(named: 'resourceId'),
+          ),
+        ).thenAnswer((_) async => expectedReply);
 
         // Act
         await repository.ask(
@@ -179,11 +196,13 @@ void main() {
         );
 
         // Assert
-        verify(() => mockDataSource.fetchAssistantReply(
-              userText: userText,
-              threadId: threadId,
-              resourceId: resourceId,
-            )).called(1);
+        verify(
+          () => mockDataSource.fetchAssistantReply(
+            userText: userText,
+            threadId: threadId,
+            resourceId: resourceId,
+          ),
+        ).called(1);
       });
     });
   });

@@ -17,7 +17,7 @@ class ApiPayload {
   }) {
     return ApiPayload(
       messages: [
-        {'role': 'user', 'content': text}
+        {'role': 'user', 'content': text},
       ],
       threadId: threadId,
       resourceId: resourceId,
